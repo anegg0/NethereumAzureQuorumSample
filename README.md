@@ -159,7 +159,7 @@ public class QuorumNormalTest
 ```
 
 ## Interacting with Quorum in Private mode
-Interacting with Quorum in private mode requires the specialised Web3Quorum object. This can be found in the Nuget Nethereum.Quorum.
+Interacting with Quorum in private mode requires the specialised Web3Quorum object. This can be found in the  Nethereum.Quorum Nuget.
 
 ### The Quorum account.
 The QuorumAccount is a new type of Account which simplifies the interaction with smart contracts in Quorum private mode. In a similar way to the ManagedAccount or Account, it wil be created as follows:
@@ -185,7 +185,7 @@ To make a private transaction we will setup the private nodes for our Quorum Web
   web3Private.SetPrivateRequestParameters(new[] { "LHTjKEqQPy6gbo4r9ouj8ztfbB+F7kWd9vosSmeQcEw=", "sXVr5ENaJeqAA8eTKm74f6epYTMcbsl8Ovp+Y8Q3dzA=" });
 ```
 ## Interacting with a smart contract
-Interacting with the smart contract will now be the same as with any other smart contract, but now all the transactions, and smart contract interactions will only be visible to only those members in the list.
+Interacting with the smart contract will now be the same as with any other smart contract, but now all the transactions, and smart contract interactions will only be visible to members in the list.
 
 ```csharp
 //Deploying new ERC20 smart contract using the Standard token library service
