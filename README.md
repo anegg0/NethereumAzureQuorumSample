@@ -1,18 +1,18 @@
 # Nethereum Azure Quorum Sample
 
-A sample of integrating with the Azure Blockchain Service and Quorum.
+A sample demonstrating how to integrate with the Azure Blockchain Service and Quorum.
 
-For simplicity this sample uses the Standard Token Library Service, you can generate the same service using one of the Nethereum Code generators using VsCode, Console, web ui etc.
+For the sake of simplicity, this sample uses the Standard Token Library Service, you can generate the same service using one of Nethereum Code generators using VsCode, Console, web ui etc.
 For more info: https://nethereum.readthedocs.io/en/latest/nethereum-code-generation/
 
 ## Interacting with Quorum 
-It is assumed you have already setup validator nodes and transaction nodes.
+It is assumed you have already set up validator nodes and transaction nodes.
 
 ### Web3 setup and authentication
 
 ### Url basic authentication
 
-Basic user/password authentication can be used including the user name and password in the Url:
+Basic user/password authentication can be used by including the user name and password in the Url:
 
 ```https://<username>:<password>@juanmemberq1.blockchain.azure.com:3200```
 
@@ -35,12 +35,12 @@ blockNumber = await web32.Eth.Blocks.GetBlockNumber.SendRequestAsync();
 
 # Managed account and Contract interaction
 
-To interact with the the Transaction node (sending transactions) you can create a Managed Account with transaction nodes addres and password.
+To interact with the the Transaction node (sending transactions) you can create a Managed Account with transaction nodes address and password.
 You can read more about Accounts here: https://nethereum.readthedocs.io/en/latest/accounts/
 
 In this sample we create an instance of Web3 using a ManagedAccount address and password. 
 
-We later on a couple of transactions are executed using the ERC2O standard token service, one to deploy the smart contract, the other to transfer some tokens.
+Later on, we couple transactions that are executed using the ERC2O standard token service, one to deploy the smart contract, the other to transfer some tokens.
 
 
 ```csharp
@@ -70,10 +70,11 @@ The constructor parameters are the same as the Solidity Smart Contract construct
   });
 ```
 
-Then we have made a Transfer transaction as follows:
+Then we can make a Transfer transaction as follows:
 
-```var receipt = await service.TransferRequestAndWaitForReceiptAsync("0x12890d2cce102216644c59daE5baed380d84830c", 10000000);```
-
+```csharp
+var receipt = await service.TransferRequestAndWaitForReceiptAsync("0x12890d2cce102216644c59daE5baed380d84830c", 10000000);
+```
 For more information on how to interact with smart contracts check the document here: https://nethereum.readthedocs.io/en/latest/nethereum-smartcontrats-gettingstarted/
 
 ## Account interaction
